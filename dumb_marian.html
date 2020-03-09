@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dumb marian</title>
+</head>
+<body>
+
+<h4>dumb marian</h4><br>
+Liang, CTCI, 2020/3/9<br>
+
+
+<textarea id="txtSPMCode" rows="50" cols="25" oninput="myFunction()">
+</textarea>
+<textarea id="txtDumbCode" rows="50" cols="25">
+</textarea>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("txtSPMCode").value;
+  var strArr = new Array();
+　strArr = x.split("\n");
+
+  output = "";
+  strArr.forEach(function(value){
+    value = value.trim();
+	if (value != "")
+	{
+		output = output + "'" + value + "',";
+	}
+  });
+  outputLength = output.length;
+  output = output.substring(0,outputLength-1);
+  output = "(" + output + ")";
+  document.getElementById("txtDumbCode").value = output;
+
+}
+</script>
+
+</body>
+</html>
